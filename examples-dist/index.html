@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Browser-local Durable Execution</title>
+    <style>
+      :root {
+        color-scheme: light;
+        font-family: "Avenir Next", Avenir, "Segoe UI", sans-serif;
+        background: linear-gradient(180deg, #f9fafb 0%, #f0f4f8 100%);
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        color: #102a43;
+      }
+
+      main {
+        width: min(42rem, calc(100vw - 2rem));
+        border: 1px solid #d9e2ec;
+        border-radius: 14px;
+        background: #ffffff;
+        box-shadow: 0 10px 30px rgba(16, 42, 67, 0.12);
+        padding: 1.5rem;
+      }
+
+      h1 {
+        margin-top: 0;
+      }
+
+      #output {
+        white-space: pre-wrap;
+        word-break: break-word;
+        border-radius: 4px;
+        font-size: 0.9rem;
+        font-family:
+          "JetBrains Mono", "Source Code Pro", Monaco, "Cascadia Code",
+          "Roboto Mono", Consolas, "Courier New", monospace;
+      }
+
+      #workflow-name {
+        width: 40%;
+        padding: 0.5rem;
+        margin-bottom: 1rem;
+        border-radius: 4px;
+        border: 1px solid #d9e2ec;
+        font-family: inherit;
+      }
+
+      button {
+        padding: 0.5rem 1rem;
+        border-radius: 4px;
+        border: none;
+        background: #0f766e;
+        color: #ffffff;
+        font-family: inherit;
+        cursor: pointer;
+        min-width: 80px;
+      }
+
+      pre {
+        margin: 1rem 0 0;
+        padding: 1rem;
+        background: #f0f4f8;
+        overflow: auto;
+      }
+
+      #workflow .CodeMirror {
+        border-radius: 4px;
+        border: 1px solid #d9e2ec;
+        font-family:
+          "JetBrains Mono", "Source Code Pro", Monaco, "Cascadia Code",
+          "Roboto Mono", Consolas, "Courier New", monospace;
+        font-size: 0.85rem;
+      }
+
+      footer {
+        margin-top: 2rem;
+        padding-top: 1rem;
+        border-top: 1px solid #d9e2ec;
+        text-align: center;
+        color: #627d98;
+        font-size: 0.9rem;
+      }
+
+      footer a {
+        color: #0f766e;
+        text-decoration: none;
+      }
+
+      footer a:hover {
+        text-decoration: underline;
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/theme/eclipse.min.css"
+    />
+    <script type="module" crossorigin src="/assets/index-DHLGqBSk.js"></script>
+  </head>
+  <body>
+    <main>
+      <h1>Browser-local Durable Execution</h1>
+      <div>
+        <input type="text" id="workflow-name" value="demo-workflow" readonly />
+        <button id="run-workflow">Run</button>
+        <button id="clear-history" style="background-color: brown">
+          Clear History
+        </button>
+      </div>
+      <div id="workflow"></div>
+
+      <pre id="output">Output will appear here...</pre>
+
+      <footer>
+        <a
+          href="https://mohitkarekar.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          >mohitkarekar.com</a
+        >
+      </footer>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/javascript/javascript.min.js"></script>
+  </body>
+</html>
